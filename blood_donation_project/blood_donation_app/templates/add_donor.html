@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add_Donor</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/add_donor.css' %}">
+</head>
+<body>
+    <h1 style="text-align: center; color:red">Add Donor Details</h1>
+    <form action="{% url 'add_donor' %}" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <table>
+            <tr>
+                <td><label for="id_donor_name">Donor Name</label></td>
+                <td><input type="text" name="donor_name" id="id_donor_name" required><br></td>
+            </tr>
+            <tr>
+                <td><label for="id_donor_email">Email</label></td>
+                <td><input type="email" name="donor_email" id="id_donor_email" required><br></td>
+            </tr>
+            <tr>
+                <td><label for="id_blood_type">Blood Type</label></td>
+                <td>
+                    <select name="donor_blood_type" id="id_blood_type" required>
+                        {% for bloodtype in bloodtypes %}
+                            <option value="{{ bloodtype.id }}">{{ bloodtype.blood_type }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="id_donor_phone">Contact No</label></td>
+                <td><input type="tel" name="donor_phone" id="id_donor_phone" pattern="[0-9]{10}" required><br></td>
+            </tr>
+            <tr>
+                <td><label for="id_blood_bank">Blood Bank</label></td>
+                <td>
+                    <select name="bloodbank" id="id_blood_bank" required>
+                        {% for bloodbank in blood_banks %}
+                            <option value="{{ bloodbank.bloodbank_name }}">{{bloodbank.bloodbank_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="id_last_donation_date">Last donation record (Today)</label></td>
+                <td><input type="date" name="last_donation_date" id="id_last_donation_date" required><br></td>
+            </tr>
+        </table>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+      <script>
+        function showPopup() {
+          alert("Data saved Successfully");
+        }
+
+    </script>
+ </body>
+</html>
+
+
+
+

@@ -1,0 +1,156 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo .logo-text {
+      text-decoration:none;
+  }
+
+  .logo-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .logo-text {
+    font-weight: bold;
+    color: #dd1818;
+    margin-left: 1.5rem;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-link {
+    margin-right: 1rem;
+    padding: 0.5rem;
+    color: #df1515;
+    text-decoration: none;
+    border-radius: 15px 5px 15px 5px;
+  }
+
+  .nav-link:hover {
+    background-color: #d51818;
+    color:#ffffff
+  }
+  li a{
+      margin:5px;
+      text-decoration: none;
+      color: rgb(224, 19, 19);
+  }
+  
+  red-bg {
+      background-color: #fafafa; /* Or your desired red color */
+      padding: 0.5rem 1.5rem; /* Adjust padding as needed */
+      border-radius: 5px; /* Optional for rounded corners */
+    }
+  
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-image: url(https://media.istockphoto.com/id/1252380604/photo/note-paper-with-blood-donation-concept-on-red-background.jpg?s=612x612&w=0&k=20&c=fNez5pcNYKtY1b67gUxC117iZa5OGq5W2zPYW7uZ65I=);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      max-width: 100vw;
+      
+      
+  }
+  .container{
+    float: left;
+    margin-left: 80px;
+    margin-top: 150px;
+    box-shadow: black;
+    box-sizing: border-box;
+    border: 2px solid white;
+    width:30%;
+    background-color: #ddd;
+    color: #df1515;
+
+  
+
+  }
+  button{
+    background-color: #dd1818;
+    color: white;
+    border-radius: 1px;
+    width:100px;
+    /* height: 100px; */
+    float: left;
+    margin-left: 80px;
+  }
+
+
+.bottom-boxes-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+}
+
+.box-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dd1818; /* Different color for header */
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+}
+
+.box-logo {
+  width: 30px; /* Decreased width */
+  height: 30px; /* Decreased height */
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 1em; 
+}
+
+.box-button {
+  background-color: #dd1818;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.box-button:hover {
+  background-color: #d51818;
+}
+
+

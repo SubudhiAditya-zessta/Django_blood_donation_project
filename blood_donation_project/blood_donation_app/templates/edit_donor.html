@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit donor </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/edit_donor.css' %}">
+</head>
+<body>
+    <h1>EDIT DONOR DETAILS</h1>
+    <form method="post" action="{% url 'edit_donor' donor.donor_email %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Donor</button>
+    </form>
+</body>
+</html>

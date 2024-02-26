@@ -1,0 +1,56 @@
+<!-- my_template.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Banks Record</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bloodbanklist.css' %}">
+
+</head>
+<body>
+    
+        <h1 style="text-align: center;">Blood Bank Names</h1>
+
+        <table >
+            <thead>
+                <tr>
+                    <th>Bloodbank Name</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+                    <th>O+(UNITS)</th>
+                    <th>O-(UNITS)</th>
+                    <th>A+(UNITS)</th>
+                    <th>A-(UNITS)</th>
+                    <th>B+(UNITS)</th>
+                    <th>B-(UNITS)</th>
+                    <th>AB+(UNITS)</th>
+                    <th>AB-(UNITS)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                    <tr style="text-align: center;">
+                        <td>{{ item.bloodbank_name }}</td>
+                        <td>{{ item.bloodbank_location }}</td>
+                        <td>{{item.bloodbank_phone}}</td>
+                        <td>{{item.Opositive_units}}</td>
+                        <td>{{item.Onegative_units}}</td>
+                        <td>{{item.Apositive_units}}</td>
+                        <td>{{item.Anegative_units}}</td>
+                        <td>{{item.Bpositive_units}}</td>
+                        <td>{{item.Bnegative_units}}</td>
+                        <td>{{item.ABpositive_units}}</td>
+                        <td>{{item.ABnegative_units}}</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    
+
+   
+</body>
+</html>

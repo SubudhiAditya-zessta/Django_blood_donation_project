@@ -1,0 +1,24 @@
+
+table{
+    margin :0 auto;
+    margin-top: 50px;
+    width: 900px;
+}
+body{
+    background-color: rgba(230, 16, 16, 0.932);
+}
+th{
+    color: red;
+    background-color: rgb(249, 249, 249);
+}
+td{
+    color: black;
+    background-color: white;
+}
+h1{
+    text-shadow: 2px;
+    background-color: white;
+    color: red;   
+}
+
+

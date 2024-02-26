@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Bank - Your Source of Life</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="https://img.freepik.com/free-vector/x9beautiful-hands-saving-blood-drop-card-design_1035-23347.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704844800&semt=ais"
+        alt="Blood Bank Logo" class="logo-image">
+      <div class="logo-text">Blood Bank</div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link red-bg">Home</a></li>
+      <li><a href="#" class="nav-link red-bg">About Us</a></li>
+      <li><a href="add_donor/" class="nav-link red-bg">Add Donor</a></li>
+      <li><a href="add_bloodbank/" class="nav-link red-bg">Add Blood Bank</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div>
+      <p>Save Blood Save Life</p>
+    </div>
+    <div>
+      <!-- <button id="myButton">Admin Login</button> -->
+      
+      <a href="#" class="box-button">Admin_login</a>
+      <!-- <a href=""></a> -->
+    </div>
+  </div>
+
+<div class="bottom-boxes-container">
+  <div class="box">
+    <div class="box-header">
+      
+      <h2>Donor's List</h2>
+    </div>
+    <p>Donors are the real hero's to save other's life.</p><br>
+    <a href="donorlist/" class="box-button">Click</a>
+    <!-- <button class="box-button" type="submit">Button 1</button> -->
+  </div>
+
+  <div class="box">
+    <div class="box-header">
+      <h2>Donation Records</h2>
+    </div>
+    <p>Click the button to see donation records </p><br>
+    <a href="donation_records/" class="box-button">Click</a>
+  </div>
+
+  <div class="box">
+    <div class="box-header">
+      
+      <h2>Blood Banks </h2>
+    </div>
+    <p>click to see bloodbanks</p><br>
+    <a href="bloodbanklist/" class="box-button">Click</a>
+  </div>
+</div>
+
+  <script>
+    document.getElementById("myButton").addEventListener("click", function () {
+      window.location.href = "admin/login/?next=/admin/";
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+table{
+    width: 50%; 
+    border-collapse: collapse; 
+    justify-content: center;
+}
+th, td {
+    padding: 10px;
+    text-align: center; 
+    border: 2px solid rgb(255, 255, 255); 
+    background-color: red;
+    color: rgb(255, 255, 255);
+
+}
+.container{
+    text-align: center;
+    justify-content: center;
+    margin-left: 30%;
+
+}
+input{
+    width: 80%;
+    height:30px;
+    color: black;   
+}
+button{
+    margin-top: 10px;
+    height: 30px;
+    width: 70px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    
+    text-align: center;
+    justify-content: center;
+    margin-left: 45%;
+    border-color: white;
+}
+#id_blood_bank {
+    width: 250px; 
+
+}
+

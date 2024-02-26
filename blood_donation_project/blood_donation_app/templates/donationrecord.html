@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Records</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/donationrecord.css' %}">
+</head>
+
+
+<body>
+    <h1>Donation Records</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Donor</th>
+                <th>Blood Bank</th>
+                <th>Donation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in donation_records %}
+                <tr>
+                    <td>{{ record.donor.donor_name }}</td>
+                    <td>{{ record.bloodbank.bloodbank_name }}</td>
+                    <td>{{ record.donation_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Donor</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/donorlist.css' %}">
+</head>
+<body>
+    <h1>Donor's List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Donor Name</th>
+                <th>Donor Photo</th>
+                <th>Email</th>
+                <th>Blood Type</th>
+                <th>Contact Number</th>
+                <th>Blood Bank</th>
+                <th>Last Donation Record</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in d %}
+            <tr>
+                <td>{{ item.donor_name }}</td>
+                <td><img src="{{ item.donor_photo }}" alt="{{ item.donor_name }}"></td>
+                <td>{{ item.donor_email }}</td>
+                <td>{{ item.donor_blood_type }}</td>
+                <td>{{ item.donor_phone }}</td>
+                <td>{{ item.bloodbank }}</td>
+                <td>{{ item.last_donation_date }}</td>
+                <td>
+                    <form action="{% url 'delete_donor' item.donor_email %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </td> 
+                <td>
+                    <form action="{% url 'edit_donor' item.donor_email %}" method="get">
+                        {% csrf_token %}
+                        <button type="submit">Edit</button>
+                    </form>
+                </td> 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

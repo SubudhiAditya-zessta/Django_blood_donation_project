@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Donations</title>
+</head>
+<body>
+    <h1>Filtered Donations</h1>
+    <ul>
+        {% for donation in filtered_donations %}
+        <li>Donor: {{ donation.donor.donor_name }}, Blood Bank: {{ donation.bloodbank.bloodbank_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
