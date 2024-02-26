@@ -7,6 +7,7 @@ urlpatterns=[
     path("add_donor/",views.add_donor,name="add_donor"),
     path('add_bloodbank/', views.add_bloodbank, name='add_bloodbank'),
     path('donorlist/',views.donorlist,name="donorlist"),
+    path('admin_login_view/',views.admin_login,name="admin_login"),
     path('delete_donor/<str:donor_email>/',views.delete_donor,name="delete_donor"),
     path('edit_donor/<str:donor_email>/', views.edit_donor, name="edit_donor"),
     path('donation_records/',views.donation_record,name="donation_record"),

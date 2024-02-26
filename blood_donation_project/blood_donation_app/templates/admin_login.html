@@ -23,6 +23,9 @@
             </div>
             <button type="submit" class="login-button">Login</button>
         </form>
+        {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+        {% endif %}
     </div>
 </body>
 </html>

@@ -50,6 +50,7 @@ def update_quantity(bloodbank, bloodtype):
 
 
 
+@login_required(login_url='/admin_login/')
 def add_donor(request):
     if request.method == 'POST':
         donor_serializer=DonorSerializers(data=request.POST)
@@ -142,7 +143,7 @@ def donation_record(request):
     donation_records=DonationRecord.objects.all()
     return render(request,'donationrecord.html',{'donation_records': donation_records})
 
-
+@login_required(login_url='/admin_login/')
 def add_bloodbank(request):
     if request.method == 'POST':
         bloodbank_serializer=BloodBankSerializers(data=request.POST)
@@ -168,15 +169,43 @@ def bloodbanklist(request):
 
 
 
+
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+
 def admin_login_view(request):
-    if request.method=='POST':
-        username=request.POST.get('username')
-        password=request.POST.get('password')
-        admin=authenticate(request,username=username,password=password)
-        login(request,admin)
-        if admin:
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        admin = authenticate(request, username=username, password=password)
+        if admin is not None:
+            login(request, admin)
             return redirect('/')
-    return render(request,'admin_login.html')
+        else:
+            # Authentication failed
+            error_message = "Invalid username or password. Please try again."
+            return render(request, 'admin_login.html', {'error_message': error_message})
+    else:
+        # Handle GET request - render login form
+        return render(request, 'admin_login.html')
+
+
+
+def admin_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        admin = authenticate(request, username=username, password=password)
+        if admin is not None:
+            login(request, admin)
+            return redirect('/admin/')
+        else:
+            # Authentication failed
+            error_message = "Invalid username or password. Please try again."
+            return render(request, 'admin_login.html', {'error_message': error_message})
+    else:
+        return render(request, 'admin_login.html')
+
 
 
 

@@ -6,14 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Donor</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/donorlist.css' %}">
+    <style>
+        /* CSS for positioning the back button */
+        .back-button {
+            position: absolute;
+            top: 10px; /* Adjust this value to position vertically */
+            right: 10px; /* Adjust this value to position horizontally */
+            color: white;
+            background-color: #333;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Donor's List</h1>
+    <nav>
+        <div class="navbar">
+            <h1>Donor's List</h1>
+            <div class="navbar-right">
+                <a href="{% url 'index' %}" class="back-button">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+    
+
     <table>
         <thead>
             <tr>
                 <th>Donor Name</th>
-                <th>Donor Photo</th>
                 <th>Email</th>
                 <th>Blood Type</th>
                 <th>Contact Number</th>
@@ -26,7 +47,6 @@
             {% for item in d %}
             <tr>
                 <td>{{ item.donor_name }}</td>
-                <td><img src="{{ item.donor_photo }}" alt="{{ item.donor_name }}"></td>
                 <td>{{ item.donor_email }}</td>
                 <td>{{ item.donor_blood_type }}</td>
                 <td>{{ item.donor_phone }}</td>
